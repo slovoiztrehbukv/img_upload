@@ -48,7 +48,7 @@ if (!empty($_POST)) {
     }
 
     if (!empty($new_files)) {
-        mailing(compact('new_files'), $email, $base_url); // sending info to administrator
+        mailing(compact('new_files'), $email); // sending info to administrator
         dbWriting($new_files);
     }
 
@@ -105,7 +105,7 @@ if (!empty($_POST)) {
       }
   }
 
-  function mailing(array $info, $email, $url):void
+  function mailing(array $info, $email):void
   {
       $text  = '<div class="mail-block">'.PHP_EOL;
       $text .= '<h3>New files are uploaded: </h3>'.PHP_EOL;
